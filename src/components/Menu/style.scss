@@ -1,0 +1,20 @@
+.menu {
+  background-color: #eee;
+  box-shadow: 1px 0px 13px 0px rgba(0,0,0,0.75);
+  height: 100vh;
+  left: 0;
+  padding: 20px 0 0 50px;
+  position: absolute;
+  top: 0;
+  width: 15vw;
+
+  &__item {
+    margin-bottom: 12px;
+  }
+
+  &__link {
+    font-size: 1.125em;
+    font-weight: 400;
+    text-decoration: none;
+  }
+}
