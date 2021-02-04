@@ -2,6 +2,8 @@ import React from 'react'
 import Link from '../Link'
 import './style.scss'
 
+import { Close as CloseIcon } from '@styled-icons/evaicons-solid/Close'
+
 const Menu = () => {
   return (
     <aside className="menu">
@@ -30,6 +32,10 @@ const Menu = () => {
           </Link>
         </li>
       </ul>
+
+      <button className="close-button">
+        <CloseIcon size="28"/>
+      </button>
     </aside>
   )
 }
