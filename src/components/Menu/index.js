@@ -4,9 +4,11 @@ import './style.scss'
 
 import { Close as CloseIcon } from '@styled-icons/evaicons-solid/Close'
 
-const Menu = () => {
+const Menu = props => {
+  const { isMenuOpened, onCloseClick } = props
+
   return (
-    <aside className="menu">
+    <aside className={`menu ${isMenuOpened ? 'is-actived' : ''}`}>
       <ul className="menu__list">
         <li className="menu__item">
           <Link className="menu__link" to="/">
@@ -33,7 +35,10 @@ const Menu = () => {
         </li>
       </ul>
 
-      <button className="close-button">
+      <button
+        className="close-button"
+        onClick={ onCloseClick }
+      >
         <CloseIcon size="28"/>
       </button>
     </aside>
