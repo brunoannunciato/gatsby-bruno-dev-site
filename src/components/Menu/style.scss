@@ -13,6 +13,7 @@
   width: 15vw;
   transform: translate(-100%);
   transition: transform .3s ease;
+  z-index: 1;
 
   &.is-actived {
     transform: translate(0);

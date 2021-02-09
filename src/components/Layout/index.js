@@ -4,6 +4,8 @@ import PropTypes from "prop-types"
 import "./style.scss"
 import Menu from "../Menu"
 
+import { MenuAltLeft as MenuIcon } from '@styled-icons/boxicons-regular/MenuAltLeft'
+
 const Layout = ({ children }) => {
   const [isMenuOpened, setMenuOpned] = useState(true) 
   return (
@@ -13,7 +15,16 @@ const Layout = ({ children }) => {
         onCloseClick={ () => setMenuOpned(!isMenuOpened) }
       />
 
-      { children }
+      <section className={`content ${!isMenuOpened && 'is-expanded'}`}>
+        { children }
+      </section>
+
+      <button
+        className="menu-icon"
+        onClick={ () => setMenuOpned(!isMenuOpened) }
+      >
+        <MenuIcon size="28"/>
+      </button>
     </main>
   )
 }
