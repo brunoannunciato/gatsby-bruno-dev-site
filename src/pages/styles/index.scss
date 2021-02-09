@@ -1,0 +1,41 @@
+.presentation {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  text-align: center;
+
+  span::selection,
+  h1::selection,
+  h2::selection {
+    background-color: #ff4c4c;
+  }
+
+  &__greeting {
+    display: block;
+    font-size: 1.25em;
+    line-height: 19px;
+    text-align: left;
+  }
+
+  &__site-title {
+    font-size: 2.07em;
+    font-weight: 300;
+    line-height: 32px;
+  }
+
+  &__name {
+    font-weight: 700;
+    display: inline;
+  }
+
+  &__occupation {
+    font-weight: 300;
+    font-size: 1.30em;
+    display: block;
+
+    h2 {
+      display: inline;
+    }
+  }
+}

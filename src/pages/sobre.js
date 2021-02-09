@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 const SobrePage = () => (
   <Layout>
     <SEO title="Sobre" />
-    <h1>Bruno Annunciato</h1>
+    <h1>Página de conteúdo sobre</h1>
   </Layout>
 )
 
