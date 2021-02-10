@@ -19,7 +19,6 @@ const ProfileImage = () => {
   )
   return (
     <figure className="profile-image">
-      { console.log({ Image }) }
       <Img fixed={ Image.childImageSharp.fixed } />
     </figure>
   )
