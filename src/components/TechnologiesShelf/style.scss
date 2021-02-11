@@ -1,0 +1,40 @@
+.technologies-shelf {
+  max-width: 230px;
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  &__item {
+    margin: 8px 16px;
+  }
+
+  &__link {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 0%;
+      position: absolute;
+      bottom: -8px;
+      height: 10px;
+      left: -10%;
+      background-color: #ff4c4c;
+      transition: width .1s ease;
+      transform: skew(15deg);
+    }
+  
+    &:hover {
+      &::before {
+        width: 120%;
+      }
+    }
+  }
+
+  &__icon {
+    color: #333;
+  }
+}
