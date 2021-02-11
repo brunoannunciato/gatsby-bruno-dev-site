@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import './style.scss'
 
-const ProfileImage = () => {
+const ProfileImage = ({ className }) => {
   const { Image } = useStaticQuery(
     graphql`
     query {
@@ -18,7 +18,7 @@ const ProfileImage = () => {
     `
   )
   return (
-    <figure className="profile-image">
+    <figure className={`profile-image ${ className ? className : '' }`}>
       <Img fixed={ Image.childImageSharp.fixed } />
     </figure>
   )
