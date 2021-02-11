@@ -1,0 +1,69 @@
+.about {
+  display: flex;
+  justify-content: space-around;
+  padding: 24px;
+
+  &__section-title {
+    font-weight: bold;
+    font-size: 1.25em;
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: -2%;
+      height: 15%;
+      left: -3%;
+      background-color: #ff4c4c;
+      transition: width .3s ease;
+      transform: skew(15deg);
+      z-index: -1;
+    }
+  }
+
+  &__short-presentation {
+    text-align: center;
+  }
+
+  &__profile-image {
+    margin: 0 auto;
+    display: block;
+  }
+  
+  &__name  {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  &__infos {
+    margin-bottom: 24px;
+  }
+
+  &__interests-list {
+    text-align: left;
+    font-weight: 300;
+  }
+
+  &__interests-item {
+    line-height: 24px;
+  }
+
+  &__history {
+    flex-grow: 1;
+    max-width: 55vw;
+    
+    p {
+      line-height: 22px;
+      margin: 10px 0;
+    }
+  }
+
+  &__technologies {
+    margin-top: 36px;
+  }
+}
