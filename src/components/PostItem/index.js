@@ -1,29 +1,39 @@
 import React from 'react'
+import propTypes from 'prop-types'
 import { Link } from "gatsby"
 import './style.scss'
 
-const PostItem = () => {
+const PostItem = ({ slug, date, timeToRead, title, category, description }) => {
   return (
     <section className="post-item">
-      <Link  className="post-item__link" to="/slug/">
+      <Link  className="post-item__link" to={ slug }>
         <p className="post-item__date">
-          28 de Dezembro de 2020 • 9 min de leitura
+          { date } • { timeToRead } min de leitura
         </p>
 
         <h1 className="post-item__title">
-          Um título bacana para um post nem tão bacana.
+          { title }
         </h1>
 
         <p className="post-item__category">
-          Front-end
+          { category }
         </p>
 
         <p className="post-item__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum molestias mollitia tempora, temporibus soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum molestias mollitia tempora, temporibus soluta.
+          { description }
         </p>
       </Link>
     </section>
   )
+}
+
+PostItem.propTypes = {
+  slug: propTypes.string.isRequired,
+  date:propTypes.string.isRequired,
+  timeToRead: propTypes.string.isRequired,
+  title: propTypes.string.isRequired,
+  category: propTypes.string.isRequired,
+  description: propTypes.string.isRequired
 }
 
 export default PostItem
