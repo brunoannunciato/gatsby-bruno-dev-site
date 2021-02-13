@@ -30,7 +30,7 @@ const PostItem = ({ slug, date, timeToRead, title, category, description }) => {
 PostItem.propTypes = {
   slug: propTypes.string.isRequired,
   date:propTypes.string.isRequired,
-  timeToRead: propTypes.string.isRequired,
+  timeToRead: propTypes.number.isRequired,
   title: propTypes.string.isRequired,
   category: propTypes.string.isRequired,
   description: propTypes.string.isRequired
