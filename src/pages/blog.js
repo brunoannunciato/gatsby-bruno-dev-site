@@ -12,7 +12,7 @@ const BlogPage = () => {
   const { allMarkdownRemark } = useStaticQuery(
     graphql`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
         edges {
           node {
             timeToRead
