@@ -6,16 +6,16 @@ import Menu from "../Menu"
 
 import { MenuAltLeft as MenuIcon } from '@styled-icons/boxicons-regular/MenuAltLeft'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, className }) => {
   const [isMenuOpened, setMenuOpned] = useState(true) 
   return (
-    <main className="layout">
+    <main className={`layout ${className ? className : ''}`}>
       < Menu
         isMenuOpened={ isMenuOpened }
         onCloseClick={ () => setMenuOpned(!isMenuOpened) }
       />
 
-      <section className={`content ${!isMenuOpened && 'is-expanded'}`}>
+      <section className={`content ${!isMenuOpened ? 'is-expanded' : ''}`}>
         { children }
       </section>
 
