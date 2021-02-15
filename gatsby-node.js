@@ -23,7 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   return graphql(`
   {
-    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+    blogs: allMarkdownRemark(filter: {frontmatter: {section: {eq: "blog"}}}, sort: {fields: frontmatter___date, order: DESC}) {
       edges {
         node {
           timeToRead
@@ -39,9 +39,26 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  }
+    portifolio: allMarkdownRemark(filter: {frontmatter: {section: {eq: "portifolio"}}}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            description
+            technologies
+            category
+            section
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }  
   `).then( result => {
-    const posts = result.data.allMarkdownRemark.edges
+    const posts = result.data.blogs.edges
+    const portifolio = result.data.portifolio.edges
 
     posts.forEach(({ node }) => {
       createPage({
@@ -67,6 +84,14 @@ exports.createPages = ({ graphql, actions }) => {
           currentPage: index + 1
         }
       })
+    })
+
+    createPage({
+      path: '/portifolio',
+      component: path.resolve('./src/templates/portifolio.js'),
+      context: {
+        portifolio
+      }
     })
   })
 }
