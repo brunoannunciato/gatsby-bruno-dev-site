@@ -1,30 +1,14 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 
 import './styles/blog-post.scss'
 
-const BlogPost = () => {
-  const { markdownRemark: { frontmatter, html, timeToRead } } = useStaticQuery(
-    graphql`
-    query filter($slug: String) {
-      markdownRemark(fields: {slug: {eq: $slug}}) {
-        html,
-        timeToRead
-        frontmatter {
-          title,
-          description,
-          category,
-          date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
-        }
-      }
-    }
-    
-    `
-  )
+const BlogPost = (props) => {
+  const content = props.data.markdownRemark
+  const { frontmatter: { title, date, description, category }, timeToRead, html } = content
 
-  const { title, description, date, category } = frontmatter
   return (
     <Layout className="blog-post">
       <SEO title={ title } />
@@ -37,5 +21,23 @@ const BlogPost = () => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query Post($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+        description
+        date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
+        category
+      }
+      html
+      timeToRead
+    }
+  }
+`
 
 export default BlogPost
