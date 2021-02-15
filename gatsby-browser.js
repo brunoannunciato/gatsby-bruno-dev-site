@@ -1,1 +1,2 @@
-import './src/reset/style.scss';
+import './src/reset/style.scss'
+import 'lazysizes'
