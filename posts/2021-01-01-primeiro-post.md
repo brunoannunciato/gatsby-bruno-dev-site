@@ -3,6 +3,7 @@ date: 2021-01-01 05:30:30
 title: Título do primeiro post
 category: Curiosidades
 description: A descrição do primeiro post, não sei qual será a utilidade dele, mas é tipo um Hello world.
+section: blog
 ---
 
 # Olá mundo!

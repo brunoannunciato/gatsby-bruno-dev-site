@@ -3,6 +3,7 @@ date: 2021-01-02 05:30:30
 title: To replicando os posts igual otário
 category: Curiosidades
 description: KATIIIIIIAU!
+section: blog
 ---
 
 # Um novo mundo de aventuras

@@ -3,6 +3,7 @@ date: 2021-01-02 05:30:30
 title: Um novo mundo de aventuras
 category: Curiosidades
 description: A descrição do primeiro post, não sei qual será a utilidade dele, mas é tipo um Hello world.
+section: blog
 ---
 
 # Um novo mundo de aventuras
