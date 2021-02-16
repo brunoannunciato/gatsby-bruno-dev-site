@@ -30,4 +30,12 @@ const JobItem = ({ title, description, thumbnail, category, technologies }) => {
   )
 }
 
+JobItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  thumbnail: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  technologies: PropTypes.string.isRequired
+}
+
 export default JobItem
