@@ -15,6 +15,11 @@
   transition: transform .3s ease;
   z-index: 1;
 
+  @media (max-width: 920px) {
+    width: 60vw;
+    z-index: 10;
+  }
+
   &.is-actived {
     transform: translate(0);
   }
