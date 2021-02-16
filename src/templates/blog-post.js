@@ -2,12 +2,13 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
+import Comments from '../components/Comments'
 
 import './styles/blog-post.scss'
 
 const BlogPost = (props) => {
   const content = props.data.markdownRemark
-  const { frontmatter: { title, date, description, category }, timeToRead, html } = content
+  const { fields: { slug }, frontmatter: { title, date, description, category }, timeToRead, html } = content
 
   return (
     <Layout className="blog-post">
@@ -18,6 +19,11 @@ const BlogPost = (props) => {
         <h2 className="blog-post__description"> { description } </h2>
       </div>
       <div className="blog-post__main-content" dangerouslySetInnerHTML={{__html: html}}></div>
+
+      <Comments 
+        url={ slug }
+        title={ title }
+      />
     </Layout>
   )
 }
