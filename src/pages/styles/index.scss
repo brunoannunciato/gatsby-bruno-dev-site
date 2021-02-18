@@ -5,6 +5,12 @@
   top: 50%;
   text-align: center;
 
+  @media (max-width: 920px) {
+    font-size: 12px;
+    max-width: 400px;
+    width: 80%;
+  }
+
   span::selection,
   h1::selection,
   h2::selection {
@@ -16,6 +22,10 @@
     font-size: 1.25em;
     line-height: 19px;
     text-align: left;
+
+    @media (max-width: 920px) {
+      display: none;
+    }
   }
 
   &__site-title {
@@ -27,12 +37,20 @@
   &__name {
     font-weight: 700;
     display: inline;
+
+    @media (max-width: 920px) {
+      display: block;
+    }
   }
 
   &__occupation {
     font-weight: 300;
     font-size: 1.30em;
     display: block;
+
+    @media (max-width: 920px) {
+      display: none;
+    }
 
     h2 {
       display: inline;
