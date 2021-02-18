@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 
 import "./style.scss"
@@ -7,7 +7,14 @@ import Menu from "../Menu"
 import { MenuAltLeft as MenuIcon } from '@styled-icons/boxicons-regular/MenuAltLeft'
 
 const Layout = ({ children, className }) => {
-  const [isMenuOpened, setMenuOpned] = useState(true) 
+  const [isMenuOpened, setMenuOpned] = useState(true)
+
+  useEffect(() => {
+    if (window.innerWidth <= 920 ) {
+      setMenuOpned(false)
+    }
+  }, [])
+
   return (
     <main className={`layout ${className ? className : ''}`}>
       < Menu
