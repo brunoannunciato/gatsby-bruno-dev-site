@@ -67,8 +67,11 @@
   }
   
   &__category {
+    border: 1px solid #414141;
+    border-radius: 6px;
     font-size: 1.25em;
     margin-bottom: 24px;
+    padding: 3px 6px;
 
     @media (max-width: 920px) {
       font-size: 1em;
