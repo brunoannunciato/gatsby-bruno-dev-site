@@ -1,0 +1,40 @@
+.search-box {
+    color: #414141;
+    margin: auto;
+    max-width: 70rem;
+    padding: 2rem 6.4rem;
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.7;
+    letter-spacing: 0.069rem;
+}
+
+.ais {
+    &-SearchBox-input {
+        width: 100%;
+        padding: 12px 0;
+        background-color: transparent;
+        font-size: 1.125em;
+        border: none;
+        border-bottom: 2px solid #333;
+        transition: border-color .3s;
+        outline: none;
+
+        &::placeholder {
+            color: #333;
+            transition: color .3s;
+        }
+
+        &:focus {
+            border-color: #ff4c4c;
+            outline: none;
+
+            &::placeholder { color: #ff4c4c; }
+        }
+    }
+
+    &-SearchBox-submit,
+    &-SearchBox-reset {
+        display: none !important;
+    }
+}
