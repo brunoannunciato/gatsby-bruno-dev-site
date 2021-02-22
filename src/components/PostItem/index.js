@@ -6,15 +6,14 @@ import './style.scss'
 const PostItem = ({ slug, date, timeToRead, title, category, description }) => {
   return (
     <section className="post-item">
-      <Link  className="post-item__link" to={ slug }>
         <p className="post-item__date">
           { date } • { timeToRead } min de leitura
         </p>
-
+        <Link  className="post-item__link" to={ slug }>
         <h1 className="post-item__title">
           { title }
         </h1>
-
+        </Link>
         <p className="post-item__category">
           { category }
         </p>
@@ -22,7 +21,6 @@ const PostItem = ({ slug, date, timeToRead, title, category, description }) => {
         <p className="post-item__description">
           { description }
         </p>
-      </Link>
     </section>
   )
 }
