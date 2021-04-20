@@ -13,7 +13,7 @@ const social = [
     url: 'https://www.linkedin.com/in/bruno-annunciato/'
   }, {
     name: 'Instagram',
-    url: 'https://www.instagram.com/brunobannunciato'
+    url: 'https://www.instagram.com/bu_nro'
   }, {
     name: 'Steam',
     url: 'https://steamcommunity.com/id/quiabo'
