@@ -1,7 +1,9 @@
 .about {
+  align-items: center;
   display: flex;
   justify-content: space-around;
   padding: 24px;
+  min-height: 100vh;
 
   &__section-title {
     font-weight: bold;
